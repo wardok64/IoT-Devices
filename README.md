@@ -248,7 +248,11 @@ End devices.
 
 <img src="https://github.com/wardok64/IoT-Devices/assets/104173190/f591c869-7605-4833-9f21-145545e303a9" width="300" height="400">
 
-<img src="https://github.com/wardok64/IoT-Devices/assets/104173190/6561d210-ac8d-41ed-a250-e3ec48794e7d" width="250" height="400">
+<img src="https://github.com/wardok64/IoT-Devices/assets/104173190/6561d210-ac8d-41ed-a250-e3ec48794e7d" width="270" height="400">
+
+<img src="https://github.com/wardok64/IoT-Devices/assets/104173190/10998e8f-462b-47c8-b821-2b68b61277ce" width="300" height="400">
+
+
 
 Gateway.
 
@@ -257,6 +261,8 @@ Gateway.
 <img src="https://github.com/wardok64/IoT-Devices/assets/104173190/00f1efd3-5998-4ddf-a8b5-5bfd42e75b55" width="300" height="400">
 
 <img src="https://github.com/wardok64/IoT-Devices/assets/104173190/cd6242bd-0cb1-4812-9660-76c664f34462" width="300" height="400">
+
+<img src="https://github.com/wardok64/IoT-Devices/assets/104173190/ca186386-ddd9-4794-83f2-9818a182c67d" width="300" height="400">
 
 
 ## Final Architecture:
