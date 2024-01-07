@@ -176,9 +176,14 @@ By running the serial monitor of our Arduino UNO we can observe the composition 
 
 ### Prototyping (Proof of concept).
 
+As mentioned before, the main function of our gateway is to establish a MQTT connection with the Broker server via WIFI (maybe in the future an Ethernet connection will be considered, to guarantee stability), receive the data from the end devices, with the help of our library "xbee. h" library, it identifies the ID of the end device that sent the message, then it processes the message and it starts to send a structured string of characters, which will correspond to the specific topic of the device, finally it publishes the topic and the corresponding payload (a status LED was added to indicate each of the operations).
+
 <img src="https://github.com/wardok64/IoT-Devices/assets/104173190/f2e1a936-f53c-4976-96a7-fd00725b65f3" width="250" height="400">
 
 Diagram:
+
+For the electronic design we considered, among other things, a selector and connectors that allow us on the one hand to reconfigure the operating parameters of our Xbee, and on the other hand a firmware update of the MCU ESP8266 (via SERIAL).
+
 ![gateway](https://github.com/wardok64/IoT-Devices/assets/104173190/78f2d5cb-1877-40af-b68a-0e12af38da1b)
 
 Code:
@@ -232,10 +237,14 @@ MQTT.fx
 
 Node-RED.
 
+Initially the MQTTin nodes subscribed to each of the corresponding topicals for each end device were individually configured, the corresponding payload was filtered from the value of the field variable and the battery charge value of each device.
+
 ![image](https://github.com/wardok64/IoT-Devices/assets/104173190/38a57e61-35bb-4b4c-8a8e-b4c51995dfda)
 
 
 Node-RED/Dashboard.
+
+A fairly basic dashboard design was developed to display the values (Front-End).
 
 ![image](https://github.com/wardok64/IoT-Devices/assets/104173190/79fc3360-a930-4e4f-99c0-2186b03c9158)
 
@@ -243,6 +252,17 @@ Node-RED/Dashboard.
 ## KICAD and PCB.
 
 End devices.
+
+Once some proofs of concept, testing, debugging and dimensioning adjustments were done, we proceeded to the design in KiCAD of the final devices, keeping in mind the modularity so that each of the final devices is compatible with different types of sensors.
+
+The electronic design was done in KiCAD working with two layers.
+
+![Screenshot from 2024-01-07 12-05-52](https://github.com/wardok64/IoT-Devices/assets/104173190/124173be-f823-49bb-aca9-e34ea6fabb8f)
+![Screenshot from 2024-01-07 12-06-19](https://github.com/wardok64/IoT-Devices/assets/104173190/e1aa69ae-888d-4b94-b54c-fee33c53413d)
+![Screenshot from 2024-01-07 12-06-52](https://github.com/wardok64/IoT-Devices/assets/104173190/4ee25a6e-862c-4595-9065-da13e49dbdb1)
+
+
+The manufacturing of the circuits was sent to China.
 
 <img src="https://github.com/wardok64/IoT-Devices/assets/104173190/ff0d48a1-b469-4ded-bb23-2a973b2353cf" width="300" height="400">
 
@@ -269,6 +289,13 @@ Gateway.
 
 ![image](https://github.com/wardok64/IoT-Devices/assets/104173190/092d3d08-3e82-4774-8d5a-1680adb35025)
 
+As a conclusion in the development of this project I can mention that the devices are working functionally in a semi-industrial environment, each element of the network was protected with an enclosure of suitable grade (IP67). Any part of the project (software and hardware) is 100% improvable, to mention a few; 
+
+- Use of ethernet instead of WiFi.
+- Migration to DIGI mesh.
+- Migration to ESP32.
+- Bare-metal firmware programming to avoid library dependencies as much as possible (optimizing energy consumption).
+- Among others.
 
 ## Next steps:
 - [ ] Migrate XbeePROS2B to S3B or DigiMesh.
